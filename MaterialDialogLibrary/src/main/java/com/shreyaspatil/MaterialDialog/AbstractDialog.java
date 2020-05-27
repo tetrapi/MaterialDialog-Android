@@ -42,10 +42,12 @@ public class AbstractDialog implements DialogInterface {
     protected int mAnimationResId;
     protected String mAnimationFile;
     protected LottieAnimationView mAnimationView;
+    protected Boolean showInLandscape;
 
     protected OnDismissListener mOnDismissListener;
     protected OnCancelListener mOnCancelListener;
     protected OnShowListener mOnShowListener;
+
 
 
     protected AbstractDialog(@NonNull Activity mActivity,
@@ -55,7 +57,8 @@ public class AbstractDialog implements DialogInterface {
                              @NonNull DialogButton mPositiveButton,
                              @NonNull DialogButton mNegativeButton,
                              @RawRes int mAnimationResId,
-                             @NonNull String mAnimationFile) {
+                             @NonNull String mAnimationFile,
+                             @NonNull Boolean showInLandscape) {
         this.mActivity = mActivity;
         this.title = title;
         this.message = message;
@@ -64,6 +67,7 @@ public class AbstractDialog implements DialogInterface {
         this.mNegativeButton = mNegativeButton;
         this.mAnimationResId = mAnimationResId;
         this.mAnimationFile = mAnimationFile;
+        this.showInLandscape = showInLandscape;
     }
 
     protected View createView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
@@ -132,7 +136,8 @@ public class AbstractDialog implements DialogInterface {
 
         // If Orientation is Horizontal, Hide AnimationView
         int orientation = mActivity.getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE && !showInLandscape) {
             mAnimationView.setVisibility(View.GONE);
         } else {
             // Set Animation from Resource

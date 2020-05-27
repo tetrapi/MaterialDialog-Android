@@ -10,9 +10,6 @@
         style="@style/MaterialDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
         android:paddingBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,55 +22,65 @@
             android:layout_height="175dp"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
-            android:visibility="gone"
+            android:visibility="visible"
             app:lottie_autoPlay="true"
             app:lottie_loop="true" />
 
-        <TextView
-            android:id="@+id/textView_title"
-            style="@style/MaterialDialog.Title"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/animation_view"
-            tools:text="Title" />
-
-        <TextView
-            android:id="@+id/textView_message"
-            style="@style/MaterialDialog.Message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView_title"
-            tools:text="Message" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView_message"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:orientation="horizontal"
             android:paddingLeft="16dp"
+            android:paddingTop="16dp"
             android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:weightSum="1.0">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_negative"
-                style="@style/MaterialDialog.NegativeButton"
+            android:layout_below="@id/animation_view">
+            <TextView
+                android:id="@+id/textView_title"
+                style="@style/MaterialDialog.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:iconGravity="textStart"
-                tools:text="Negative" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_positive"
-                style="@style/MaterialDialog.PositiveButton"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/textView_message"
+                style="@style/MaterialDialog.Message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:iconGravity="textStart"
-                tools:text="Positive" />
-        </LinearLayout>
+                android:layout_below="@id/textView_title"
+                tools:text="Message" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_message"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:weightSum="1.0">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_negative"
+                    style="@style/MaterialDialog.NegativeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:iconGravity="textStart"
+                    tools:text="Negative" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_positive"
+                    style="@style/MaterialDialog.PositiveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:iconGravity="textStart"
+                    tools:text="Positive" />
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

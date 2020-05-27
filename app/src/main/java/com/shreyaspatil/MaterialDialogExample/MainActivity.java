@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })
                 .setAnimation("delete_anim.json")
+                .setShowInLandscape(true)
                 .build();
 
         // Animated BottomSheet Material Dialog
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })
                 .setAnimation("delete_anim.json")
+                .setShowInLandscape(true)
                 .build();
 
        mButtonSimpleDialog.setOnClickListener(this);

@@ -25,8 +25,9 @@ public class MaterialDialog extends AbstractDialog {
                              @NonNull DialogButton mPositiveButton,
                              @NonNull DialogButton mNegativeButton,
                              @RawRes int mAnimationResId,
-                             @NonNull String mAnimationFile) {
-        super(mActivity, title, message, mCancelable, mPositiveButton, mNegativeButton, mAnimationResId, mAnimationFile);
+                             @NonNull String mAnimationFile,
+                             @NonNull Boolean mShowInLandscape) {
+        super(mActivity, title, message, mCancelable, mPositiveButton, mNegativeButton, mAnimationResId, mAnimationFile, mShowInLandscape);
 
         // Init Dialog
         final AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
@@ -56,6 +57,7 @@ public class MaterialDialog extends AbstractDialog {
         private DialogButton negativeButton;
         private int animationResId = NO_ANIMATION;
         private String animationFile;
+        private Boolean showInLandscape = false;
 
         /**
          * @param activity where Material Dialog is to be built.
@@ -158,12 +160,23 @@ public class MaterialDialog extends AbstractDialog {
             return this;
         }
 
+        /** It sets the showInLandscape property to allow or not the animation to be shown in landscape orientation
+         *
+         * @param showInLandscape sets the showInLandscape property
+         * @return this, for chaining.
+         */
+        @NonNull
+        public Builder setShowInLandscape(@NonNull Boolean showInLandscape) {
+            this.showInLandscape = showInLandscape;
+            return this;
+        }
+
         /**
          * Build the {@link MaterialDialog}.
          */
         @NonNull
         public MaterialDialog build() {
-            return new MaterialDialog(activity, title, message, isCancelable, positiveButton, negativeButton, animationResId, animationFile);
+            return new MaterialDialog(activity, title, message, isCancelable, positiveButton, negativeButton, animationResId, animationFile, showInLandscape);
         }
     }
 }
