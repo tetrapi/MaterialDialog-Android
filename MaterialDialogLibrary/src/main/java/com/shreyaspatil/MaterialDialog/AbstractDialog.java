@@ -6,6 +6,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,8 +113,6 @@ public class AbstractDialog implements DialogInterface {
                     mPositiveButton.getOnClickListener().onClick(AbstractDialog.this, BUTTON_POSITIVE);
                 }
             });
-        } else {
-            mPositiveButtonView.setVisibility(View.INVISIBLE);
         }
 
         // Set Negative Button
@@ -130,8 +129,6 @@ public class AbstractDialog implements DialogInterface {
                     mNegativeButton.getOnClickListener().onClick(AbstractDialog.this, BUTTON_NEGATIVE);
                 }
             });
-        } else {
-            mNegativeButtonView.setVisibility(View.INVISIBLE);
         }
 
         // If Orientation is Horizontal, Hide AnimationView

@@ -11,6 +11,7 @@ public class DialogButton {
         this.title = title;
         this.icon = icon;
         this.onClickListener = onClickListener;
+
     }
 
     public String getTitle() {

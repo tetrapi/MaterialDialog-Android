@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSimpleDialog = new MaterialDialog.Builder(this)
                 .setTitle("Delete?")
                 .setMessage("Are you sure want to delete this file?")
-                .setCancelable(false)
+                .setCancelable(true)
                 .setPositiveButton("Delete", R.drawable.ic_delete, new MaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -43,20 +43,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialogInterface.dismiss();
                     }
                 })
-                .setNegativeButton("Cancel", R.drawable.ic_close, new MaterialDialog.OnClickListener() {
+                /*.setNegativeButton("Cancel", R.drawable.ic_close, new MaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         Toast.makeText(getApplicationContext(), "Cancelled!", Toast.LENGTH_SHORT).show();
                         dialogInterface.dismiss();
                     }
-                })
+                })*/
                 .build();
 
         // Simple BottomSheet Material Dialog
         mSimpleBottomSheetDialog = new BottomSheetMaterialDialog.Builder(this)
                 .setTitle("Delete?")
                 .setMessage("Are you sure want to delete this file?")
-                .setCancelable(false)
+                .setCancelable(true)
                 .setPositiveButton("Delete", R.drawable.ic_delete, new BottomSheetMaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -64,20 +64,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialogInterface.dismiss();
                     }
                 })
-                .setNegativeButton("Cancel", R.drawable.ic_close, new BottomSheetMaterialDialog.OnClickListener() {
+                /*.setNegativeButton("Cancel", R.drawable.ic_close, new BottomSheetMaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         Toast.makeText(getApplicationContext(), "Cancelled!", Toast.LENGTH_SHORT).show();
                         dialogInterface.dismiss();
                     }
-                })
+                })*/
                 .build();
 
         // Animated Simple Material Dialog
         mAnimatedDialog = new MaterialDialog.Builder(this)
                 .setTitle("Delete?")
                 .setMessage("Are you sure want to delete this file?")
-                .setCancelable(false)
+                .setCancelable(true)
                 .setPositiveButton("Delete", R.drawable.ic_delete, new MaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -85,13 +85,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialogInterface.dismiss();
                     }
                 })
-                .setNegativeButton("Cancel", R.drawable.ic_close, new MaterialDialog.OnClickListener() {
+                /*.setNegativeButton("Cancel", R.drawable.ic_close, new MaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         Toast.makeText(getApplicationContext(), "Cancelled!", Toast.LENGTH_SHORT).show();
                         dialogInterface.dismiss();
                     }
-                })
+                })*/
                 .setAnimation("delete_anim.json")
                 .setShowInLandscape(true)
                 .build();
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        mAnimatedBottomSheetDialog = new BottomSheetMaterialDialog.Builder(this)
                 .setTitle("Delete?")
                 .setMessage("Are you sure want to delete this file?")
-                .setCancelable(false)
+                .setCancelable(true)
                 .setPositiveButton("Delete", R.drawable.ic_delete, new BottomSheetMaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -108,13 +108,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialogInterface.dismiss();
                     }
                 })
-                .setNegativeButton("Cancel", R.drawable.ic_close, new BottomSheetMaterialDialog.OnClickListener() {
+                /*.setNegativeButton("Cancel", R.drawable.ic_close, new BottomSheetMaterialDialog.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         Toast.makeText(getApplicationContext(), "Cancelled!", Toast.LENGTH_SHORT).show();
                         dialogInterface.dismiss();
                     }
-                })
+                })*/
                 .setAnimation("delete_anim.json")
                 .setShowInLandscape(true)
                 .build();

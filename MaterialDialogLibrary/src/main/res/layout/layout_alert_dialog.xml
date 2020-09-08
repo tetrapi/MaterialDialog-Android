@@ -44,7 +44,7 @@
             style="@style/MaterialDialog.Message" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_below="@+id/textView_message"
@@ -52,25 +52,30 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="16dp"
-            android:weightSum="1.0">
+            android:weightSum="1.0"
+            android:layout_centerHorizontal="true">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_negative"
                 style="@style/MaterialDialog.NegativeButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:iconGravity="textStart"
                 tools:text="Negative"
-                android:layout_weight="0.5" />
+                android:visibility="gone"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_positive"
                 style="@style/MaterialDialog.PositiveButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 app:iconGravity="textStart"
-                tools:text="Positive" />
+                tools:text="Positive"
+                android:visibility="gone"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"/>
         </LinearLayout>
 
     </RelativeLayout>
