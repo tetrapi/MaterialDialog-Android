@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })*/
                 .setAnimation(R.raw.connection_error)
+                .setAnimationHeight(300)
                 .setShowInLandscape(true)
                 .build();
 
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialogInterface.dismiss();
                     }
                 })*/
+                .setAnimationHeight(300)
                 .setAnimation(R.raw.connection_error)
                 .setShowInLandscape(true)
                 .build();
