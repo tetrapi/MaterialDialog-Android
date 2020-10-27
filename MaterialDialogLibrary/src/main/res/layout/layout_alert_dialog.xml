@@ -24,7 +24,7 @@
             app:lottie_loop="true"
             android:visibility="visible"
             android:layout_alignParentTop="true"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             app:lottie_autoPlay="true"/>
 
         <TextView

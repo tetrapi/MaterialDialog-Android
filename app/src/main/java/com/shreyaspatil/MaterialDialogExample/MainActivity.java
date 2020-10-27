@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialogInterface.dismiss();
                     }
                 })*/
-                .setAnimation("delete_anim.json")
+                .setAnimation(R.raw.connection_error)
                 .setShowInLandscape(true)
                 .build();
 
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dialogInterface.dismiss();
                     }
                 })*/
-                .setAnimation("delete_anim.json")
+                .setAnimation(R.raw.connection_error)
                 .setShowInLandscape(true)
                 .build();
 
