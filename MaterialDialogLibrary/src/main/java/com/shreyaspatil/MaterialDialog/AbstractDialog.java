@@ -44,6 +44,7 @@ public class AbstractDialog implements DialogInterface {
     protected String mAnimationFile;
     protected LottieAnimationView mAnimationView;
     protected Boolean showInLandscape;
+    protected Integer height;
 
     protected OnDismissListener mOnDismissListener;
     protected OnCancelListener mOnCancelListener;
@@ -59,7 +60,9 @@ public class AbstractDialog implements DialogInterface {
                              @NonNull DialogButton mNegativeButton,
                              @RawRes int mAnimationResId,
                              @NonNull String mAnimationFile,
-                             @NonNull Boolean showInLandscape) {
+                             @NonNull Boolean showInLandscape,
+                             @NonNull Integer height
+    ) {
         this.mActivity = mActivity;
         this.title = title;
         this.message = message;
@@ -69,6 +72,7 @@ public class AbstractDialog implements DialogInterface {
         this.mAnimationResId = mAnimationResId;
         this.mAnimationFile = mAnimationFile;
         this.showInLandscape = showInLandscape;
+        this.height = height;
     }
 
     protected View createView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
@@ -152,6 +156,13 @@ public class AbstractDialog implements DialogInterface {
             } else {
                 mAnimationView.setVisibility(View.GONE);
             }
+        }
+
+        if (mAnimationView.getVisibility() == View.VISIBLE && height != -1) {
+            ViewGroup.LayoutParams params = mAnimationView.getLayoutParams();
+            params.height = this.height;
+            mAnimationView.setLayoutParams(params);
+            mAnimationView.requestLayout();
         }
 
         // Apply Styles

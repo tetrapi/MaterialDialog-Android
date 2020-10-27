@@ -33,8 +33,10 @@ public class BottomSheetMaterialDialog extends AbstractDialog {
                                         @NonNull DialogButton mNegativeButton,
                                         @RawRes int mAnimationResId,
                                         @NonNull String mAnimationFile,
-                                        @NonNull Boolean mShowInLandscape) {
-        super(mActivity, title, message, mCancelable, mPositiveButton, mNegativeButton, mAnimationResId, mAnimationFile, mShowInLandscape);
+                                        @NonNull Boolean mShowInLandscape,
+                                        @NonNull Integer mHeight
+    ) {
+        super(mActivity, title, message, mCancelable, mPositiveButton, mNegativeButton, mAnimationResId, mAnimationFile, mShowInLandscape, mHeight);
 
         // Init Dialog, Create Bottom Sheet Dialog
         mDialog = new BottomSheetDialog(mActivity);
@@ -94,6 +96,7 @@ public class BottomSheetMaterialDialog extends AbstractDialog {
         private int animationResId = NO_ANIMATION;
         private String animationFile;
         private Boolean showInLandscape = false;
+        private Integer height = -1;
 
         /**
          * @param activity where BottomSheet Material Dialog is to be built.
@@ -219,12 +222,23 @@ public class BottomSheetMaterialDialog extends AbstractDialog {
             return this;
         }
 
+        /** It sets the showInLandscape property to allow or not the animation to be shown in landscape orientation
+         *
+         * @param height sets the height of the animation wrapper
+         * @return this, for chaining.
+         */
+        @NonNull
+        public Builder setAnimationHeight(@NonNull Integer height) {
+            this.height = height;
+            return this;
+        }
+
         /**
          * Build the {@link BottomSheetMaterialDialog}.
          */
         @NonNull
         public BottomSheetMaterialDialog build() {
-            return new BottomSheetMaterialDialog(activity, title, message, isCancelable, positiveButton, negativeButton, animationResId, animationFile, showInLandscape);
+            return new BottomSheetMaterialDialog(activity, title, message, isCancelable, positiveButton, negativeButton, animationResId, animationFile, showInLandscape, height);
         }
     }
 
